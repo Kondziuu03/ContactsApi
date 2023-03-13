@@ -1,0 +1,330 @@
+2023-03-13 16:56:41.4339 INFO User profile is available. Using 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-13 16:56:41.8696 INFO Now listening on: https://localhost:5001
+2023-03-13 16:56:41.8696 INFO Now listening on: http://localhost:5000
+2023-03-13 16:56:41.8696 INFO Application started. Press Ctrl+C to shut down.
+2023-03-13 16:56:41.8696 INFO Hosting environment: Development
+2023-03-13 16:56:41.8696 INFO Content root path: C:\DOTNET kurs\Contacts\Contacts
+2023-03-13 16:56:42.3786 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2023-03-13 16:56:42.5502 INFO Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - -
+2023-03-13 16:56:42.5502 INFO Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+2023-03-13 16:56:42.5502 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 173.9990ms
+2023-03-13 16:56:42.5502 INFO Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 3.0446ms
+2023-03-13 16:56:42.5831 INFO Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.8739ms
+2023-03-13 16:56:42.7090 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2023-03-13 16:56:42.8470 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 137.9340ms
+2023-03-13 16:57:54.1883 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/register application/json 92
+2023-03-13 16:57:54.5014 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/register application/json 92 - 404 0 - 313.0960ms
+2023-03-13 17:00:08.3307 INFO User profile is available. Using 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-13 17:00:08.6598 INFO Now listening on: https://localhost:5001
+2023-03-13 17:00:08.6598 INFO Now listening on: http://localhost:5000
+2023-03-13 17:00:08.6598 INFO Application started. Press Ctrl+C to shut down.
+2023-03-13 17:00:08.6646 INFO Hosting environment: Development
+2023-03-13 17:00:08.6646 INFO Content root path: C:\DOTNET kurs\Contacts\Contacts
+2023-03-13 17:00:09.1401 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2023-03-13 17:00:09.2793 INFO Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+2023-03-13 17:00:09.2793 INFO Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - -
+2023-03-13 17:00:09.2793 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 141.2436ms
+2023-03-13 17:00:09.2793 INFO Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 8.1791ms
+2023-03-13 17:00:09.2931 INFO Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.8426ms
+2023-03-13 17:00:09.3523 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2023-03-13 17:00:09.4308 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 78.4859ms
+2023-03-13 17:00:10.3469 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/register application/json 99
+2023-03-13 17:00:10.4024 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/register application/json 99 - 404 0 - 55.5152ms
+2023-03-13 17:00:16.1345 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/register application/json 99
+2023-03-13 17:00:16.1345 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/register application/json 99 - 404 0 - 0.9303ms
+2023-03-13 17:00:27.0652 INFO Request starting HTTP/1.1 GET https://localhost:5001/api/company application/json 99
+2023-03-13 17:00:27.0730 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-03-13 17:00:27.0940 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-03-13 17:00:27.3115 INFO Executing action method Contacts.Controllers.CompanyController.GetAll (Contacts) - Validation state: Valid
+2023-03-13 17:00:27.7347 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:00:28.8846 INFO Executed DbCommand (171ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-03-13 17:00:28.9570 INFO Executed action method Contacts.Controllers.CompanyController.GetAll (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1643.3078ms.
+2023-03-13 17:00:28.9570 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-13 17:00:28.9694 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 1873.4655ms
+2023-03-13 17:00:28.9694 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-03-13 17:00:28.9694 INFO Request finished HTTP/1.1 GET https://localhost:5001/api/company application/json 99 - 200 - application/json;+charset=utf-8 1906.5265ms
+2023-03-13 17:01:03.9865 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/register application/json 99
+2023-03-13 17:01:03.9865 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/register application/json 99 - 404 0 - 0.9821ms
+2023-03-13 17:01:13.9432 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/account/register application/json 99
+2023-03-13 17:01:13.9432 INFO Executing endpoint 'Contacts.Controllers.AccountController.RegisterUser (Contacts)'
+2023-03-13 17:01:13.9515 INFO Route matched with {action = "RegisterUser", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(Contacts.Models.RegisterUserDto) on controller Contacts.Controllers.AccountController (Contacts).
+2023-03-13 17:01:14.0225 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:01:14.0679 INFO Executed DbCommand (31ms) [Parameters=[@__value_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Email] = @__value_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-13 17:01:14.0727 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-03-13 17:01:14.0727 INFO Executed action Contacts.Controllers.AccountController.RegisterUser (Contacts) in 125.5541ms
+2023-03-13 17:01:14.0727 INFO Executed endpoint 'Contacts.Controllers.AccountController.RegisterUser (Contacts)'
+2023-03-13 17:01:14.0727 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/account/register application/json 99 - 400 - application/problem+json;+charset=utf-8 134.1085ms
+2023-03-13 17:01:26.5991 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/account/register application/json 99
+2023-03-13 17:01:26.5991 INFO Executing endpoint 'Contacts.Controllers.AccountController.RegisterUser (Contacts)'
+2023-03-13 17:01:26.6028 INFO Route matched with {action = "RegisterUser", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(Contacts.Models.RegisterUserDto) on controller Contacts.Controllers.AccountController (Contacts).
+2023-03-13 17:01:26.6028 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:01:26.6028 INFO Executed DbCommand (1ms) [Parameters=[@__value_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Email] = @__value_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-13 17:01:26.6028 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-03-13 17:01:26.6028 INFO Executed action Contacts.Controllers.AccountController.RegisterUser (Contacts) in 8.333ms
+2023-03-13 17:01:26.6028 INFO Executed endpoint 'Contacts.Controllers.AccountController.RegisterUser (Contacts)'
+2023-03-13 17:01:26.6028 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/account/register application/json 99 - 400 - application/problem+json;+charset=utf-8 12.1462ms
+2023-03-13 17:01:36.5892 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/account/register application/json 99
+2023-03-13 17:01:36.5892 INFO Executing endpoint 'Contacts.Controllers.AccountController.RegisterUser (Contacts)'
+2023-03-13 17:01:36.5892 INFO Route matched with {action = "RegisterUser", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(Contacts.Models.RegisterUserDto) on controller Contacts.Controllers.AccountController (Contacts).
+2023-03-13 17:01:36.5892 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:01:36.5892 INFO Executed DbCommand (1ms) [Parameters=[@__value_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Email] = @__value_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-13 17:01:36.5892 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-03-13 17:01:36.5892 INFO Executed action Contacts.Controllers.AccountController.RegisterUser (Contacts) in 5.629ms
+2023-03-13 17:01:36.5892 INFO Executed endpoint 'Contacts.Controllers.AccountController.RegisterUser (Contacts)'
+2023-03-13 17:01:36.5892 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/account/register application/json 99 - 400 - application/problem+json;+charset=utf-8 6.1215ms
+2023-03-13 17:01:45.7516 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/account/register application/json 100
+2023-03-13 17:01:45.7516 INFO Executing endpoint 'Contacts.Controllers.AccountController.RegisterUser (Contacts)'
+2023-03-13 17:01:45.7516 INFO Route matched with {action = "RegisterUser", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult RegisterUser(Contacts.Models.RegisterUserDto) on controller Contacts.Controllers.AccountController (Contacts).
+2023-03-13 17:01:45.7516 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:01:45.7516 INFO Executed DbCommand (1ms) [Parameters=[@__value_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Email] = @__value_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-03-13 17:01:45.7699 INFO Executing action method Contacts.Controllers.AccountController.RegisterUser (Contacts) - Validation state: Valid
+2023-03-13 17:01:45.8913 INFO Executed DbCommand (49ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [FirstName], [LastName], [PasswordHash])
+VALUES (@p0, @p1, @p2, @p3);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-03-13 17:01:45.9141 INFO Executed action method Contacts.Controllers.AccountController.RegisterUser (Contacts), returned result Microsoft.AspNetCore.Mvc.OkResult in 144.1152ms.
+2023-03-13 17:01:45.9156 INFO Executing HttpStatusCodeResult, setting HTTP status code 200
+2023-03-13 17:01:45.9156 INFO Executed action Contacts.Controllers.AccountController.RegisterUser (Contacts) in 160.2437ms
+2023-03-13 17:01:45.9156 INFO Executed endpoint 'Contacts.Controllers.AccountController.RegisterUser (Contacts)'
+2023-03-13 17:01:45.9156 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/account/register application/json 100 - 200 0 - 164.0776ms
+2023-03-13 17:02:31.2416 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/account/login application/json 63
+2023-03-13 17:02:31.2416 INFO Executing endpoint 'Contacts.Controllers.AccountController.Login (Contacts)'
+2023-03-13 17:02:31.2662 INFO Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Login(Contacts.Models.LoginDto) on controller Contacts.Controllers.AccountController (Contacts).
+2023-03-13 17:02:31.2783 INFO Executing action method Contacts.Controllers.AccountController.Login (Contacts) - Validation state: Valid
+2023-03-13 17:02:31.2783 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:02:31.3480 INFO Executed DbCommand (65ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2023-03-13 17:02:31.5064 INFO Executed action method Contacts.Controllers.AccountController.Login (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 228.0299ms.
+2023-03-13 17:02:31.5064 INFO Executing OkObjectResult, writing value of type 'System.String'.
+2023-03-13 17:02:31.5064 INFO Executed action Contacts.Controllers.AccountController.Login (Contacts) in 240.4306ms
+2023-03-13 17:02:31.5064 INFO Executed endpoint 'Contacts.Controllers.AccountController.Login (Contacts)'
+2023-03-13 17:02:31.5064 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/account/login application/json 63 - 200 - text/plain;+charset=utf-8 265.2161ms
+2023-03-13 17:02:44.9611 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/account/login application/json 62
+2023-03-13 17:02:44.9614 INFO Executing endpoint 'Contacts.Controllers.AccountController.Login (Contacts)'
+2023-03-13 17:02:44.9614 INFO Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Login(Contacts.Models.LoginDto) on controller Contacts.Controllers.AccountController (Contacts).
+2023-03-13 17:02:44.9614 INFO Executing action method Contacts.Controllers.AccountController.Login (Contacts) - Validation state: Valid
+2023-03-13 17:02:44.9614 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:02:44.9614 INFO Executed DbCommand (1ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2023-03-13 17:02:48.4487 INFO Executed action Contacts.Controllers.AccountController.Login (Contacts) in 3487.1884ms
+2023-03-13 17:02:48.4487 INFO Executed endpoint 'Contacts.Controllers.AccountController.Login (Contacts)'
+2023-03-13 17:02:48.4719 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/account/login application/json 62 - 400 - - 3510.7438ms
+2023-03-13 17:02:54.2178 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/account/login application/json 63
+2023-03-13 17:02:54.2178 INFO Executing endpoint 'Contacts.Controllers.AccountController.Login (Contacts)'
+2023-03-13 17:02:54.2178 INFO Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Login(Contacts.Models.LoginDto) on controller Contacts.Controllers.AccountController (Contacts).
+2023-03-13 17:02:54.2291 INFO Executing action method Contacts.Controllers.AccountController.Login (Contacts) - Validation state: Valid
+2023-03-13 17:02:54.2291 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:02:54.2291 INFO Executed DbCommand (1ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2023-03-13 17:02:54.2291 INFO Executed action method Contacts.Controllers.AccountController.Login (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.8505ms.
+2023-03-13 17:02:54.2291 INFO Executing OkObjectResult, writing value of type 'System.String'.
+2023-03-13 17:02:54.2291 INFO Executed action Contacts.Controllers.AccountController.Login (Contacts) in 13.9501ms
+2023-03-13 17:02:54.2291 INFO Executed endpoint 'Contacts.Controllers.AccountController.Login (Contacts)'
+2023-03-13 17:02:54.2291 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/account/login application/json 63 - 200 - text/plain;+charset=utf-8 14.3600ms
+2023-03-13 17:04:46.5758 INFO User profile is available. Using 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-03-13 17:04:46.9251 INFO Now listening on: https://localhost:5001
+2023-03-13 17:04:46.9251 INFO Now listening on: http://localhost:5000
+2023-03-13 17:04:46.9251 INFO Application started. Press Ctrl+C to shut down.
+2023-03-13 17:04:46.9319 INFO Hosting environment: Development
+2023-03-13 17:04:46.9319 INFO Content root path: C:\DOTNET kurs\Contacts\Contacts
+2023-03-13 17:04:47.3113 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2023-03-13 17:04:47.4413 INFO Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - -
+2023-03-13 17:04:47.4413 INFO Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+2023-03-13 17:04:47.4413 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 132.3231ms
+2023-03-13 17:04:47.4413 INFO Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 2.7455ms
+2023-03-13 17:04:47.4554 INFO Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.1050ms
+2023-03-13 17:04:47.5146 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2023-03-13 17:04:47.5832 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 68.5543ms
+2023-03-13 17:04:55.4502 INFO Request starting HTTP/1.1 GET https://localhost:5001/api/company - -
+2023-03-13 17:04:55.5057 INFO Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-03-13 17:04:55.5081 INFO AuthenticationScheme: Bearer was challenged.
+2023-03-13 17:04:55.5081 INFO Request finished HTTP/1.1 GET https://localhost:5001/api/company - - - 401 0 - 63.7176ms
+2023-03-13 17:05:28.7716 INFO Request starting HTTP/1.1 GET https://localhost:5001/api/company - -
+2023-03-13 17:05:28.8928 INFO Successfully validated the token.
+2023-03-13 17:05:28.8928 INFO Authorization was successful.
+2023-03-13 17:05:28.8928 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-03-13 17:05:28.9077 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-03-13 17:05:29.0899 INFO Executing action method Contacts.Controllers.CompanyController.GetAll (Contacts) - Validation state: Valid
+2023-03-13 17:05:29.4932 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:05:29.9096 INFO Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-03-13 17:05:29.9801 INFO Executed action method Contacts.Controllers.CompanyController.GetAll (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 888.2409ms.
+2023-03-13 17:05:29.9801 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-13 17:05:29.9927 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 1083.0026ms
+2023-03-13 17:05:29.9927 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-03-13 17:05:29.9927 INFO Request finished HTTP/1.1 GET https://localhost:5001/api/company - - - 200 - application/json;+charset=utf-8 1223.4818ms
+2023-03-13 17:05:46.5815 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/company application/json 1774
+2023-03-13 17:05:46.5815 INFO Successfully validated the token.
+2023-03-13 17:05:46.5815 INFO Executing endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:05:46.5922 INFO Route matched with {action = "CreateCompany", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult CreateCompany(Contacts.Models.CreateCompanyDto) on controller Contacts.Controllers.CompanyController (Contacts).
+2023-03-13 17:05:46.6580 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:05:46.6711 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CAST(0 AS bit)
+2023-03-13 17:05:46.6711 INFO Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-03-13 17:05:46.6810 INFO Executed action Contacts.Controllers.CompanyController.CreateCompany (Contacts) in 88.6906ms
+2023-03-13 17:05:46.6810 INFO Executed endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:05:46.6810 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/company application/json 1774 - 400 - application/problem+json;+charset=utf-8 99.6673ms
+2023-03-13 17:06:49.6267 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/company - 0
+2023-03-13 17:06:49.6331 INFO Executing endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:06:49.6331 INFO Route matched with {action = "CreateCompany", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult CreateCompany(Contacts.Models.CreateCompanyDto) on controller Contacts.Controllers.CompanyController (Contacts).
+2023-03-13 17:06:49.6331 INFO Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-03-13 17:06:49.6331 INFO Executed action Contacts.Controllers.CompanyController.CreateCompany (Contacts) in 5.9597ms
+2023-03-13 17:06:49.6331 INFO Executed endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:06:49.6331 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/company - 0 - 415 - application/problem+json;+charset=utf-8 13.1734ms
+2023-03-13 17:07:13.6264 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/company? - 0
+2023-03-13 17:07:13.6264 INFO Executing endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:07:13.6264 INFO Route matched with {action = "CreateCompany", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult CreateCompany(Contacts.Models.CreateCompanyDto) on controller Contacts.Controllers.CompanyController (Contacts).
+2023-03-13 17:07:13.6264 INFO Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-03-13 17:07:13.6264 INFO Executed action Contacts.Controllers.CompanyController.CreateCompany (Contacts) in 0.3235ms
+2023-03-13 17:07:13.6264 INFO Executed endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:07:13.6264 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/company? - 0 - 415 - application/problem+json;+charset=utf-8 6.4264ms
+2023-03-13 17:07:41.8136 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/company - 0
+2023-03-13 17:07:41.8238 INFO Successfully validated the token.
+2023-03-13 17:07:41.8238 INFO Executing endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:07:41.8238 INFO Route matched with {action = "CreateCompany", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult CreateCompany(Contacts.Models.CreateCompanyDto) on controller Contacts.Controllers.CompanyController (Contacts).
+2023-03-13 17:07:41.8238 INFO Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-03-13 17:07:41.8238 INFO Executed action Contacts.Controllers.CompanyController.CreateCompany (Contacts) in 0.3218ms
+2023-03-13 17:07:41.8238 INFO Executed endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:07:41.8238 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/company - 0 - 415 - application/problem+json;+charset=utf-8 10.8658ms
+2023-03-13 17:08:00.0146 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/company - 0
+2023-03-13 17:08:00.0146 INFO Successfully validated the token.
+2023-03-13 17:08:00.0146 INFO Executing endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:08:00.0146 INFO Route matched with {action = "CreateCompany", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult CreateCompany(Contacts.Models.CreateCompanyDto) on controller Contacts.Controllers.CompanyController (Contacts).
+2023-03-13 17:08:00.0146 INFO Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-03-13 17:08:00.0146 INFO Executed action Contacts.Controllers.CompanyController.CreateCompany (Contacts) in 0.3007ms
+2023-03-13 17:08:00.0146 INFO Executed endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:08:00.0146 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/company - 0 - 415 - application/problem+json;+charset=utf-8 3.7289ms
+2023-03-13 17:08:03.1197 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/account/login application/json 63
+2023-03-13 17:08:03.1197 INFO Executing endpoint 'Contacts.Controllers.AccountController.Login (Contacts)'
+2023-03-13 17:08:03.1197 INFO Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Login(Contacts.Models.LoginDto) on controller Contacts.Controllers.AccountController (Contacts).
+2023-03-13 17:08:03.1357 INFO Executing action method Contacts.Controllers.AccountController.Login (Contacts) - Validation state: Valid
+2023-03-13 17:08:03.1357 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:08:03.1602 INFO Executed DbCommand (12ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__dto_Email_0
+2023-03-13 17:08:03.1803 INFO Executed action method Contacts.Controllers.AccountController.Login (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 44.5222ms.
+2023-03-13 17:08:03.1803 INFO Executing OkObjectResult, writing value of type 'System.String'.
+2023-03-13 17:08:03.1803 INFO Executed action Contacts.Controllers.AccountController.Login (Contacts) in 59.3017ms
+2023-03-13 17:08:03.1803 INFO Executed endpoint 'Contacts.Controllers.AccountController.Login (Contacts)'
+2023-03-13 17:08:03.1803 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/account/login application/json 63 - 200 - text/plain;+charset=utf-8 60.9632ms
+2023-03-13 17:08:18.5204 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/company - 0
+2023-03-13 17:08:18.5204 INFO Successfully validated the token.
+2023-03-13 17:08:18.5204 INFO Executing endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:08:18.5248 INFO Route matched with {action = "CreateCompany", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult CreateCompany(Contacts.Models.CreateCompanyDto) on controller Contacts.Controllers.CompanyController (Contacts).
+2023-03-13 17:08:18.5248 INFO Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-03-13 17:08:18.5248 INFO Executed action Contacts.Controllers.CompanyController.CreateCompany (Contacts) in 0.5744ms
+2023-03-13 17:08:18.5248 INFO Executed endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:08:18.5248 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/company - 0 - 415 - application/problem+json;+charset=utf-8 5.1322ms
+2023-03-13 17:08:19.5500 INFO Request starting HTTP/1.1 POST https://localhost:5001/api/company - 0
+2023-03-13 17:08:19.5500 INFO Successfully validated the token.
+2023-03-13 17:08:19.5500 INFO Executing endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:08:19.5500 INFO Route matched with {action = "CreateCompany", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult CreateCompany(Contacts.Models.CreateCompanyDto) on controller Contacts.Controllers.CompanyController (Contacts).
+2023-03-13 17:08:19.5500 INFO Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-03-13 17:08:19.5500 INFO Executed action Contacts.Controllers.CompanyController.CreateCompany (Contacts) in 0.401ms
+2023-03-13 17:08:19.5500 INFO Executed endpoint 'Contacts.Controllers.CompanyController.CreateCompany (Contacts)'
+2023-03-13 17:08:19.5500 INFO Request finished HTTP/1.1 POST https://localhost:5001/api/company - 0 - 415 - application/problem+json;+charset=utf-8 1.0421ms
+2023-03-13 17:08:25.6218 INFO Request starting HTTP/1.1 GET https://localhost:5001/api/company - -
+2023-03-13 17:08:25.6218 INFO Successfully validated the token.
+2023-03-13 17:08:25.6218 INFO Authorization was successful.
+2023-03-13 17:08:25.6218 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-03-13 17:08:25.6218 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-03-13 17:08:25.6355 INFO Executing action method Contacts.Controllers.CompanyController.GetAll (Contacts) - Validation state: Valid
+2023-03-13 17:08:25.6355 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:08:25.6355 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-03-13 17:08:25.6355 INFO Executed action method Contacts.Controllers.CompanyController.GetAll (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.7463ms.
+2023-03-13 17:08:25.6355 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-13 17:08:25.6355 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 18.4964ms
+2023-03-13 17:08:25.6355 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-03-13 17:08:25.6355 INFO Request finished HTTP/1.1 GET https://localhost:5001/api/company - - - 200 - application/json;+charset=utf-8 19.7140ms
+2023-03-13 17:08:45.1567 INFO Request starting HTTP/1.1 GET https://localhost:5001/api/company? - -
+2023-03-13 17:08:45.1567 INFO Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-03-13 17:08:45.1567 INFO AuthenticationScheme: Bearer was challenged.
+2023-03-13 17:08:45.1567 INFO Request finished HTTP/1.1 GET https://localhost:5001/api/company? - - - 401 0 - 3.5077ms
+2023-03-13 17:09:10.8358 INFO Request starting HTTP/1.1 GET https://localhost:5001/api/company - -
+2023-03-13 17:09:10.8358 INFO Successfully validated the token.
+2023-03-13 17:09:10.8358 INFO Authorization was successful.
+2023-03-13 17:09:10.8358 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-03-13 17:09:10.8358 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-03-13 17:09:10.8525 INFO Executing action method Contacts.Controllers.CompanyController.GetAll (Contacts) - Validation state: Valid
+2023-03-13 17:09:10.8525 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-03-13 17:09:10.8525 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-03-13 17:09:10.8525 INFO Executed action method Contacts.Controllers.CompanyController.GetAll (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.8618ms.
+2023-03-13 17:09:10.8525 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-13 17:09:10.8525 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 16.7643ms
+2023-03-13 17:09:10.8525 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-03-13 17:09:10.8525 INFO Request finished HTTP/1.1 GET https://localhost:5001/api/company - - - 200 - application/json;+charset=utf-8 22.0089ms
