@@ -1,6 +1,6 @@
 # ContactsApi
 ## General info
-Simple Rest Api, using CRUD operations to manage informations about companies and contacts to their developers.
+Simple .NET Core Rest Api, using CRUD operations to manage informations about companies and contacts to their developers.
 ## Features
 - CRUD operations for companies and contacts
 - User authorization and authentication by JWT tokens
