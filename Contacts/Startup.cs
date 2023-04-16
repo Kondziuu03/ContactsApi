@@ -79,6 +79,17 @@ namespace Contacts
             services.AddHttpContextAccessor();
             services.AddScoped<ErrorHandlingMiddleware>();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
+
             services.AddDbContext<ApplicationDbContext>
                 (options => options.UseSqlServer(Configuration.GetConnectionString("ContactDbConnection")));
         }
@@ -92,6 +103,8 @@ namespace Contacts
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Contacts v1"));
             }
+
+            app.UseCors("AllowAllOrigins");
 
             app.UseMiddleware<ErrorHandlingMiddleware>();
             app.UseAuthentication();

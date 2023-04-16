@@ -1,0 +1,506 @@
+2023-04-16 19:50:29.1128 INFO User profile is available. Using 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-16 19:50:29.2157 INFO Creating key {fb99c97f-7f1a-453e-9935-4b8030a36f6d} with creation date 2023-04-16 17:50:29Z, activation date 2023-04-16 19:11:56Z, and expiration date 2023-07-15 17:50:29Z.
+2023-04-16 19:50:29.2232 INFO Writing data to file 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys\key-fb99c97f-7f1a-453e-9935-4b8030a36f6d.xml'.
+2023-04-16 19:50:29.4218 INFO Now listening on: https://localhost:5001
+2023-04-16 19:50:29.4218 INFO Now listening on: http://localhost:5000
+2023-04-16 19:50:29.4218 INFO Application started. Press Ctrl+C to shut down.
+2023-04-16 19:50:29.4228 INFO Hosting environment: Development
+2023-04-16 19:50:29.4228 INFO Content root path: C:\DOTNET kurs\Contacts\Contacts
+2023-04-16 19:50:29.9397 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2023-04-16 19:50:30.0238 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 84.8792ms
+2023-04-16 19:50:30.0238 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - -
+2023-04-16 19:50:30.0238 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - -
+2023-04-16 19:50:30.0238 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - -
+2023-04-16 19:50:30.0238 INFO Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+2023-04-16 19:50:30.0341 INFO Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 2.6214ms
+2023-04-16 19:50:30.0482 INFO Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-04-16 19:50:30.0482 INFO Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-04-16 19:50:30.0482 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js - - - 200 311804 application/javascript 19.0833ms
+2023-04-16 19:50:30.0482 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - - - 200 142933 text/css 19.1010ms
+2023-04-16 19:50:30.0482 INFO Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-04-16 19:50:30.0482 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui-bundle.js - - - 200 986342 application/javascript 22.0763ms
+2023-04-16 19:50:30.1397 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2023-04-16 19:50:30.1499 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - -
+2023-04-16 19:50:30.1499 INFO Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-04-16 19:50:30.1499 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/favicon-32x32.png - - - 200 628 image/png 0.8462ms
+2023-04-16 19:50:30.2066 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 66.8334ms
+2023-04-16 19:50:57.7369 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 19:50:57.7732 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 19:50:57.7836 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 19:50:58.2935 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 19:50:58.7419 INFO Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 19:50:58.8047 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 19:50:58.8135 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 1027.993ms
+2023-04-16 19:50:58.8135 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 19:50:58.8135 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 1078.2833ms
+2023-04-16 19:51:34.4354 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 19:51:34.4354 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 19:51:34.4354 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 19:51:34.4531 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 19:51:34.4600 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 19:51:34.4600 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 19:51:34.4600 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 24.2171ms
+2023-04-16 19:51:34.4600 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 19:51:34.4600 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 25.6721ms
+2023-04-16 19:53:07.1465 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 19:53:07.1465 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 19:53:07.1465 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 19:53:07.1465 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 19:53:07.1602 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 19:53:07.1602 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 19:53:07.1602 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 10.168ms
+2023-04-16 19:53:07.1602 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 19:53:07.1602 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 14.2215ms
+2023-04-16 19:58:33.2861 INFO Request starting HTTP/1.1 GET https://localhost:5001/api/Company - -
+2023-04-16 19:58:33.3515 INFO Failed to validate the token.
+2023-04-16 19:58:33.3515 INFO Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: 'System.DateTime', Current time: 'System.DateTime'.
+2023-04-16 19:58:33.3515 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 19:58:33.3515 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 19:58:33.3515 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 19:58:33.3839 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 19:58:33.3839 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 19:58:33.3937 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 41.8946ms
+2023-04-16 19:58:33.3937 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 19:58:33.3937 INFO Request finished HTTP/1.1 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 107.6964ms
+2023-04-16 19:59:02.7547 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 19:59:02.7547 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 19:59:02.7547 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 19:59:02.7547 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 19:59:02.7547 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 19:59:02.7547 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 19:59:02.7547 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 4.3765ms
+2023-04-16 19:59:02.7547 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 19:59:02.7547 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 4.9352ms
+2023-04-16 20:03:18.1667 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:03:18.1667 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:03:18.1667 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:03:18.1667 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:03:18.1667 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:03:18.1667 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:03:18.1667 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 4.4642ms
+2023-04-16 20:03:18.1667 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:03:18.1667 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 4.9520ms
+2023-04-16 20:03:59.5530 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:03:59.5530 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:03:59.5530 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:03:59.5530 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:03:59.5530 INFO Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:03:59.5530 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:03:59.5530 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 1.232ms
+2023-04-16 20:03:59.5530 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:03:59.5530 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 2.0071ms
+2023-04-16 20:11:49.6675 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:11:49.6675 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:11:49.6675 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:11:49.6675 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:11:49.7094 INFO Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:11:49.7094 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:11:49.7094 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 41.8844ms
+2023-04-16 20:11:49.7094 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:11:49.7094 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 42.4404ms
+2023-04-16 20:12:16.7177 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:12:16.7177 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:12:16.7177 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:12:16.7177 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:12:16.7227 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:12:16.7227 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:12:16.7227 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 4.9035ms
+2023-04-16 20:12:16.7227 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:12:16.7227 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 5.5902ms
+2023-04-16 20:13:34.1440 INFO User profile is available. Using 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-16 20:13:34.2956 INFO Now listening on: https://localhost:5001
+2023-04-16 20:13:34.2956 INFO Now listening on: http://localhost:5000
+2023-04-16 20:13:34.2956 INFO Application started. Press Ctrl+C to shut down.
+2023-04-16 20:13:34.2956 INFO Hosting environment: Development
+2023-04-16 20:13:34.2956 INFO Content root path: C:\DOTNET kurs\Contacts\Contacts
+2023-04-16 20:13:34.3579 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2023-04-16 20:13:34.4813 INFO Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+2023-04-16 20:13:34.4813 INFO Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - -
+2023-04-16 20:13:34.4813 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 125.3895ms
+2023-04-16 20:13:34.4813 INFO Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 1.7558ms
+2023-04-16 20:13:34.5404 INFO Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 59.0890ms
+2023-04-16 20:13:34.5865 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2023-04-16 20:13:34.6355 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 48.9858ms
+2023-04-16 20:13:37.7282 INFO User profile is available. Using 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-16 20:13:37.8743 INFO Now listening on: https://localhost:5001
+2023-04-16 20:13:37.8743 INFO Now listening on: http://localhost:5000
+2023-04-16 20:13:37.8743 INFO Application started. Press Ctrl+C to shut down.
+2023-04-16 20:13:37.8753 INFO Hosting environment: Development
+2023-04-16 20:13:37.8753 INFO Content root path: C:\DOTNET kurs\Contacts\Contacts
+2023-04-16 20:13:38.0342 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2023-04-16 20:13:38.1286 INFO Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+2023-04-16 20:13:38.1286 INFO Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - -
+2023-04-16 20:13:38.1286 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 95.2905ms
+2023-04-16 20:13:38.1286 INFO Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 1.5751ms
+2023-04-16 20:13:38.1286 INFO Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 6.5284ms
+2023-04-16 20:13:38.1956 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2023-04-16 20:13:38.2429 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 47.2158ms
+2023-04-16 20:13:43.5020 INFO User profile is available. Using 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-16 20:13:43.8145 INFO Now listening on: https://localhost:5001
+2023-04-16 20:13:43.8145 INFO Now listening on: http://localhost:5000
+2023-04-16 20:13:43.8145 INFO Application started. Press Ctrl+C to shut down.
+2023-04-16 20:13:43.8145 INFO Hosting environment: Development
+2023-04-16 20:13:43.8145 INFO Content root path: C:\DOTNET kurs\Contacts\Contacts
+2023-04-16 20:13:44.5901 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2023-04-16 20:13:44.7407 INFO Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+2023-04-16 20:13:44.7407 INFO Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - -
+2023-04-16 20:13:44.7407 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 153.2065ms
+2023-04-16 20:13:44.7407 INFO Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 2.0641ms
+2023-04-16 20:13:44.7549 INFO Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.1464ms
+2023-04-16 20:13:44.7996 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2023-04-16 20:13:44.8630 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 63.4475ms
+2023-04-16 20:13:52.1574 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:13:52.2117 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:13:52.2247 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:13:52.4299 INFO Executing action method Contacts.Controllers.CompanyController.GetAll (Contacts) - Validation state: Valid
+2023-04-16 20:13:52.8336 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:13:53.2544 INFO Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:13:53.3261 INFO Executed action method Contacts.Controllers.CompanyController.GetAll (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 894.1576ms.
+2023-04-16 20:13:53.3299 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:13:53.3299 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 1113.0299ms
+2023-04-16 20:13:53.3299 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:13:53.3299 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 1185.7389ms
+2023-04-16 20:13:53.5000 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:13:53.5009 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:13:53.5009 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:13:53.5009 INFO Executing action method Contacts.Controllers.CompanyController.GetAll (Contacts) - Validation state: Valid
+2023-04-16 20:13:53.5266 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:13:53.5266 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:13:53.5266 INFO Executed action method Contacts.Controllers.CompanyController.GetAll (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 19.5646ms.
+2023-04-16 20:13:53.5266 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:13:53.5266 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 29.4974ms
+2023-04-16 20:13:53.5266 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:13:53.5266 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 30.8271ms
+2023-04-16 20:13:56.5802 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:13:56.5802 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:13:56.5802 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:13:56.5802 INFO Executing action method Contacts.Controllers.CompanyController.GetAll (Contacts) - Validation state: Valid
+2023-04-16 20:13:56.5953 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:13:56.5953 INFO Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:13:56.5953 INFO Executed action method Contacts.Controllers.CompanyController.GetAll (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.5678ms.
+2023-04-16 20:13:56.5953 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:13:56.5953 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 14.9545ms
+2023-04-16 20:13:56.5953 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:13:56.5953 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 16.9799ms
+2023-04-16 20:13:56.8178 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:13:56.8178 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:13:56.8178 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:13:56.8178 INFO Executing action method Contacts.Controllers.CompanyController.GetAll (Contacts) - Validation state: Valid
+2023-04-16 20:13:56.8178 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:13:56.8178 INFO Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:13:56.8178 INFO Executed action method Contacts.Controllers.CompanyController.GetAll (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.9393ms.
+2023-04-16 20:13:56.8178 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:13:56.8178 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 10.1151ms
+2023-04-16 20:13:56.8178 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:13:56.8282 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 10.4542ms
+2023-04-16 20:13:57.1664 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:13:57.1664 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:13:57.1664 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:13:57.1759 INFO Executing action method Contacts.Controllers.CompanyController.GetAll (Contacts) - Validation state: Valid
+2023-04-16 20:13:57.1759 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:13:57.1759 INFO Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:13:57.1759 INFO Executed action method Contacts.Controllers.CompanyController.GetAll (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.9079ms.
+2023-04-16 20:13:57.1759 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:13:57.1759 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 10.3391ms
+2023-04-16 20:13:57.1759 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:13:57.1759 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 10.7403ms
+2023-04-16 20:13:57.3110 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:13:57.3110 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:13:57.3110 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:13:57.3195 INFO Executing action method Contacts.Controllers.CompanyController.GetAll (Contacts) - Validation state: Valid
+2023-04-16 20:13:57.3195 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:13:57.3195 INFO Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:13:57.3195 INFO Executed action method Contacts.Controllers.CompanyController.GetAll (Contacts), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.9906ms.
+2023-04-16 20:13:57.3195 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:13:57.3195 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 9.6264ms
+2023-04-16 20:13:57.3195 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:13:57.3195 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 9.9141ms
+2023-04-16 20:19:44.1102 INFO User profile is available. Using 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-16 20:19:44.2976 INFO Now listening on: https://localhost:5001
+2023-04-16 20:19:44.2976 INFO Now listening on: http://localhost:5000
+2023-04-16 20:19:44.2976 INFO Application started. Press Ctrl+C to shut down.
+2023-04-16 20:19:44.2976 INFO Hosting environment: Development
+2023-04-16 20:19:44.2976 INFO Content root path: C:\DOTNET kurs\Contacts\Contacts
+2023-04-16 20:19:44.6807 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2023-04-16 20:19:44.7851 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 105.0149ms
+2023-04-16 20:19:44.7851 INFO Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - -
+2023-04-16 20:19:44.7851 INFO Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+2023-04-16 20:19:44.7851 INFO Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 1.7777ms
+2023-04-16 20:19:44.7851 INFO Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 8.0883ms
+2023-04-16 20:19:44.8355 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2023-04-16 20:19:44.9013 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 65.7653ms
+2023-04-16 20:19:48.7504 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:19:48.7802 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:19:48.7899 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:19:49.2620 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:19:49.6149 INFO Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:19:49.6773 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:19:49.6773 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 893.277ms
+2023-04-16 20:19:49.6773 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:19:49.6773 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 936.5474ms
+2023-04-16 20:21:52.8822 INFO Request starting HTTP/2 OPTIONS https://localhost:5001/api/Company - -
+2023-04-16 20:21:52.8822 INFO Executing endpoint '405 HTTP Method Not Supported'
+2023-04-16 20:21:52.8822 INFO Executed endpoint '405 HTTP Method Not Supported'
+2023-04-16 20:21:52.8822 INFO Request finished HTTP/2 OPTIONS https://localhost:5001/api/Company - - - 405 0 - 1.3371ms
+2023-04-16 20:25:02.0864 INFO User profile is available. Using 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-16 20:25:02.2235 INFO Now listening on: https://localhost:5001
+2023-04-16 20:25:02.2235 INFO Now listening on: http://localhost:5000
+2023-04-16 20:25:02.2235 INFO Application started. Press Ctrl+C to shut down.
+2023-04-16 20:25:02.2235 INFO Hosting environment: Development
+2023-04-16 20:25:02.2235 INFO Content root path: C:\DOTNET kurs\Contacts\Contacts
+2023-04-16 20:25:02.3341 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2023-04-16 20:25:02.4286 INFO Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - -
+2023-04-16 20:25:02.4286 INFO Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+2023-04-16 20:25:02.4286 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 95.5793ms
+2023-04-16 20:25:02.4286 INFO Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 1.5892ms
+2023-04-16 20:25:02.4286 INFO Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.8578ms
+2023-04-16 20:25:02.4785 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2023-04-16 20:25:02.5301 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 51.6239ms
+2023-04-16 20:25:29.0723 INFO User profile is available. Using 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-16 20:25:29.2136 INFO Now listening on: https://localhost:5001
+2023-04-16 20:25:29.2136 INFO Now listening on: http://localhost:5000
+2023-04-16 20:25:29.2136 INFO Application started. Press Ctrl+C to shut down.
+2023-04-16 20:25:29.2136 INFO Hosting environment: Development
+2023-04-16 20:25:29.2136 INFO Content root path: C:\DOTNET kurs\Contacts\Contacts
+2023-04-16 20:25:29.2970 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2023-04-16 20:25:29.3879 INFO Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - -
+2023-04-16 20:25:29.3879 INFO Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+2023-04-16 20:25:29.3879 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 91.8196ms
+2023-04-16 20:25:29.3879 INFO Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 1.5515ms
+2023-04-16 20:25:29.3940 INFO Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 6.0989ms
+2023-04-16 20:25:29.4387 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2023-04-16 20:25:29.4907 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 52.0581ms
+2023-04-16 20:25:30.4476 INFO User profile is available. Using 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-16 20:25:30.5812 INFO Now listening on: https://localhost:5001
+2023-04-16 20:25:30.5812 INFO Now listening on: http://localhost:5000
+2023-04-16 20:25:30.5812 INFO Application started. Press Ctrl+C to shut down.
+2023-04-16 20:25:30.5812 INFO Hosting environment: Development
+2023-04-16 20:25:30.5812 INFO Content root path: C:\DOTNET kurs\Contacts\Contacts
+2023-04-16 20:25:30.7757 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2023-04-16 20:25:30.8697 INFO Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - -
+2023-04-16 20:25:30.8697 INFO Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+2023-04-16 20:25:30.8697 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 95.0107ms
+2023-04-16 20:25:30.8697 INFO Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 1.6416ms
+2023-04-16 20:25:30.8697 INFO Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 5.9480ms
+2023-04-16 20:25:30.9167 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2023-04-16 20:25:30.9664 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 49.7250ms
+2023-04-16 20:25:32.7558 INFO Application is shutting down...
+2023-04-16 20:25:34.9921 INFO User profile is available. Using 'C:\Users\konra\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-16 20:25:35.1289 INFO Now listening on: https://localhost:5001
+2023-04-16 20:25:35.1289 INFO Now listening on: http://localhost:5000
+2023-04-16 20:25:35.1289 INFO Application started. Press Ctrl+C to shut down.
+2023-04-16 20:25:35.1289 INFO Hosting environment: Development
+2023-04-16 20:25:35.1289 INFO Content root path: C:\DOTNET kurs\Contacts\Contacts
+2023-04-16 20:25:35.2934 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2023-04-16 20:25:35.3875 INFO Request starting HTTP/2 GET https://localhost:5001/_vs/browserLink - -
+2023-04-16 20:25:35.3875 INFO Request starting HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - -
+2023-04-16 20:25:35.3875 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 94.6555ms
+2023-04-16 20:25:35.3875 INFO Request finished HTTP/2 GET https://localhost:5001/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 1.6669ms
+2023-04-16 20:25:35.3986 INFO Request finished HTTP/2 GET https://localhost:5001/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10.6932ms
+2023-04-16 20:25:35.4343 INFO Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2023-04-16 20:25:35.4858 INFO Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 51.4268ms
+2023-04-16 20:25:43.9925 INFO Request starting HTTP/2 OPTIONS https://localhost:5001/api/Company - -
+2023-04-16 20:25:43.9925 INFO CORS policy execution successful.
+2023-04-16 20:25:43.9925 INFO Request finished HTTP/2 OPTIONS https://localhost:5001/api/Company - - - 204 - - 3.9157ms
+2023-04-16 20:25:43.9925 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company application/json -
+2023-04-16 20:25:43.9925 INFO CORS policy execution successful.
+2023-04-16 20:25:44.0267 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:25:44.0372 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:25:44.5103 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:25:44.8660 INFO Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:25:44.9309 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:25:44.9401 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 900.6483ms
+2023-04-16 20:25:44.9401 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:25:44.9401 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company application/json - - 200 - application/json;+charset=utf-8 944.4148ms
+2023-04-16 20:26:31.0552 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:26:31.0552 INFO CORS policy execution successful.
+2023-04-16 20:26:31.0552 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:26:31.0552 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:26:31.0742 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:26:31.0804 INFO Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:26:31.0804 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:26:31.0804 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 23.2092ms
+2023-04-16 20:26:31.0804 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:26:31.0804 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 26.2662ms
+2023-04-16 20:26:55.4677 INFO Request starting HTTP/2 GET https://localhost:5001/api/Company - -
+2023-04-16 20:26:55.4677 INFO CORS policy execution successful.
+2023-04-16 20:26:55.4697 INFO Executing endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:26:55.4697 INFO Route matched with {action = "GetAll", controller = "Company"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Contacts.Models.CompanyDto]] GetAll() on controller Contacts.Controllers.CompanyController (Contacts).
+2023-04-16 20:26:55.4697 INFO Entity Framework Core 5.0.17 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2023-04-16 20:26:55.4697 INFO Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddressId], [c].[Description], [c].[Name], [a].[Id], [a].[City], [a].[PostalCode], [a].[Street], [t].[Id], [t].[CategoryId], [t].[CompanyId], [t].[Email], [t].[Name], [t].[PhoneNumber], [t].[Id0], [t].[Name0]
+FROM [Companies] AS [c]
+INNER JOIN [Addresses] AS [a] ON [c].[AddressId] = [a].[Id]
+LEFT JOIN (
+    SELECT [c0].[Id], [c0].[CategoryId], [c0].[CompanyId], [c0].[Email], [c0].[Name], [c0].[PhoneNumber], [c1].[Id] AS [Id0], [c1].[Name] AS [Name0]
+    FROM [Contacts] AS [c0]
+    INNER JOIN [Categories] AS [c1] ON [c0].[CategoryId] = [c1].[Id]
+) AS [t] ON [c].[Id] = [t].[CompanyId]
+ORDER BY [c].[Id], [a].[Id], [t].[Id], [t].[Id0]
+2023-04-16 20:26:55.4697 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Contacts.Models.CompanyDto, Contacts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-04-16 20:26:55.4697 INFO Executed action Contacts.Controllers.CompanyController.GetAll (Contacts) in 6.3597ms
+2023-04-16 20:26:55.4697 INFO Executed endpoint 'Contacts.Controllers.CompanyController.GetAll (Contacts)'
+2023-04-16 20:26:55.4697 INFO Request finished HTTP/2 GET https://localhost:5001/api/Company - - - 200 - application/json;+charset=utf-8 8.4838ms
+2023-04-16 20:37:15.0476 INFO Application is shutting down...
